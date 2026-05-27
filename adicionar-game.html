@@ -12,71 +12,93 @@
 
 </head>
 
-<body class="bg-zinc-950 text-white min-h-screen flex justify-center items-center p-8">
+<body class="bg-zinc-950 text-white min-h-screen p-8">
 
-  <div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-2xl border border-zinc-800">
+  <!-- BOTÃO VOLTAR -->
 
-    <h1 class="text-4xl font-bold mb-8">
-      🎮 Adicionar Game
-    </h1>
+  <a
+    href="dashboard.html"
+    class="fixed top-6 left-6 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 px-5 py-3 rounded-xl font-bold transition-all"
+  >
+    ← Voltar
+  </a>
 
-    <form id="game-form" class="flex flex-col gap-4">
+  <!-- CONTAINER -->
 
-      <input
-        type="text"
-        id="nome"
-        placeholder="Nome do game"
-        class="bg-zinc-800 p-3 rounded-lg"
-      >
+  <div class="flex justify-center items-center min-h-screen">
 
-      <input
-        type="text"
-        id="genero"
-        placeholder="Gênero"
-        class="bg-zinc-800 p-3 rounded-lg"
-      >
+    <div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-2xl border border-zinc-800 shadow-2xl">
 
-      <input
-        type="text"
-        id="plataforma"
-        placeholder="Plataforma"
-        class="bg-zinc-800 p-3 rounded-lg"
-      >
+      <h1 class="text-4xl font-bold mb-8">
+        🎮 Adicionar Game
+      </h1>
 
-      <input
-        type="number"
-        id="preco"
-        placeholder="Preço"
-        class="bg-zinc-800 p-3 rounded-lg"
-      >
+      <form id="game-form" class="flex flex-col gap-4">
 
-      <textarea
-        id="descricao"
-        placeholder="Descrição"
-        class="bg-zinc-800 p-3 rounded-lg h-32"
-      ></textarea>
+        <input
+          type="text"
+          id="nome"
+          placeholder="Nome do game"
+          class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
+        >
 
-      <input
-        type="text"
-        id="imagem_url"
-        placeholder="URL da imagem"
-        class="bg-zinc-800 p-3 rounded-lg"
-      >
+        <input
+          type="text"
+          id="genero"
+          placeholder="Gênero"
+          class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
+        >
 
-      <button
-        type="submit"
-        class="bg-blue-600 hover:bg-blue-700 p-3 rounded-lg font-bold"
-      >
-        Salvar Game
-      </button>
+        <input
+          type="text"
+          id="plataforma"
+          placeholder="Plataforma"
+          class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
+        >
 
-    </form>
+        <input
+          type="number"
+          id="preco"
+          placeholder="Preço"
+          class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
+        >
+
+        <textarea
+          id="descricao"
+          placeholder="Descrição"
+          class="bg-zinc-800 p-3 rounded-lg h-32 outline-none border border-zinc-700 focus:border-blue-500"
+        ></textarea>
+
+        <!-- UPLOAD DE IMAGEM -->
+
+        <input
+          type="file"
+          id="imagem"
+          class="bg-zinc-800 p-3 rounded-lg border border-zinc-700"
+        >
+
+        <button
+          type="submit"
+          class="bg-blue-600 hover:bg-blue-700 transition-all p-3 rounded-lg font-bold"
+        >
+          Salvar Game
+        </button>
+
+      </form>
+
+    </div>
 
   </div>
 
+  <!-- SUPABASE -->
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
+  <!-- CONEXÃO -->
+
   <script src="./js/supabase.js"></script>
+
+  <!-- CRUD -->
 
   <script src="./js/games.js"></script>
 
