@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
   <meta charset="UTF-8">
@@ -23,59 +24,101 @@
     ← Voltar
   </a>
 
-  <!-- CONTAINER -->
-
   <div class="flex justify-center items-center min-h-screen">
 
     <div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-2xl border border-zinc-800 shadow-2xl">
 
       <h1 class="text-4xl font-bold mb-8">
-        🎮 Adicionar Game
+        Adicionar Game
       </h1>
 
       <form id="game-form" class="flex flex-col gap-4">
 
+        <!-- NOME -->
+
         <input
           type="text"
           id="nome"
-          placeholder="Nome do game"
+          placeholder="Nome do Game"
+          required
           class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
         >
 
-        <input
-          type="text"
+        <!-- GÊNERO -->
+
+        <select
           id="genero"
-          placeholder="Gênero"
+          required
           class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
         >
 
-        <input
-          type="text"
+          <option value="">Selecione um gênero</option>
+
+          <option value="Ação">Ação</option>
+          <option value="Aventura">Aventura</option>
+          <option value="RPG">RPG</option>
+          <option value="FPS">FPS</option>
+          <option value="Corrida">Corrida</option>
+          <option value="Esporte">Esporte</option>
+          <option value="Estratégia">Estratégia</option>
+          <option value="Terror">Terror</option>
+          <option value="Simulação">Simulação</option>
+          <option value="Luta">Luta</option>
+          <option value="Puzzle">Puzzle</option>
+          <option value="Multiplayer">Multiplayer</option>
+
+        </select>
+
+        <!-- PLATAFORMA -->
+
+        <select
           id="plataforma"
-          placeholder="Plataforma"
+          required
           class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
         >
+
+          <option value="">Selecione a plataforma</option>
+
+          <option value="PC">PC</option>
+          <option value="PlayStation 5">PlayStation 5</option>
+          <option value="PlayStation 4">PlayStation 4</option>
+          <option value="Xbox Series X/S">Xbox Series X/S</option>
+          <option value="Xbox One">Xbox One</option>
+          <option value="Nintendo Switch">Nintendo Switch</option>
+          <option value="Mobile">Mobile</option>
+
+        </select>
+
+        <!-- PREÇO -->
 
         <input
           type="number"
           id="preco"
+          step="0.01"
           placeholder="Preço"
+          required
           class="bg-zinc-800 p-3 rounded-lg outline-none border border-zinc-700 focus:border-blue-500"
         >
+
+        <!-- DESCRIÇÃO -->
 
         <textarea
           id="descricao"
           placeholder="Descrição"
+          required
           class="bg-zinc-800 p-3 rounded-lg h-32 outline-none border border-zinc-700 focus:border-blue-500"
         ></textarea>
 
-        <!-- UPLOAD DE IMAGEM -->
+        <!-- IMAGEM -->
 
         <input
           type="file"
           id="imagem"
+          accept="image/*"
           class="bg-zinc-800 p-3 rounded-lg border border-zinc-700"
         >
+
+        <!-- BOTÃO -->
 
         <button
           type="submit"
@@ -90,17 +133,12 @@
 
   </div>
 
-  <!-- SUPABASE -->
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
-  <!-- CONEXÃO -->
-
   <script src="./js/supabase.js"></script>
-
-  <!-- CRUD -->
 
   <script src="./js/games.js"></script>
 
 </body>
+
 </html>
